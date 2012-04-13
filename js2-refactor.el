@@ -65,7 +65,7 @@
 
 ;;; Code:
 
-(require 'js2-mode)
+(require 'js3-mode)
 
 ;;; Settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -76,8 +76,8 @@
 (require 'js2r-formatting)
 
 ;; Expand and contract object
-(define-key js2-mode-map (kbd "C-c RET eo") 'js-expand-object)
-(define-key js2-mode-map (kbd "C-c RET co") 'js-contract-object)
+(define-key js3-mode-map (kbd "C-c RET eo") 'js-expand-object)
+(define-key js3-mode-map (kbd "C-c RET co") 'js-contract-object)
 
 
 
@@ -85,10 +85,10 @@
 (require 'js2r-iife)
 
 ;; Wrap the entire buffer in an immediately invoked function expression
-(define-key js2-mode-map (kbd "C-c RET wi") 'js-wrap-buffer-in-iife)
+(define-key js3-mode-map (kbd "C-c RET wi") 'js-wrap-buffer-in-iife)
 
 ;; Create shortcut for marked global by injecting it in the wrapping IIFE
-(define-key js2-mode-map (kbd "C-c RET ig") 'js-inject-global-in-iife)
+(define-key js3-mode-map (kbd "C-c RET ig") 'js-inject-global-in-iife)
 
 
 
@@ -96,10 +96,10 @@
 (require 'js2r-vars)
 
 ;; Extract
-(define-key js2-mode-map (kbd "C-c RET ev") 'js2-extract-variable)
+(define-key js3-mode-map (kbd "C-c RET ev") 'js2-extract-variable)
 
 ;; Rename
-(define-key js2-mode-map (kbd "C-c RET rv") 'js2-rename-var)
+(define-key js3-mode-map (kbd "C-c RET rv") 'js2-rename-var)
 
 
 
@@ -107,7 +107,7 @@
 (require 'js2r-functions)
 
 ;; Toggle function declaration/expression
-(define-key js2-mode-map (kbd "C-c RET tf") 'js2r-toggle-function-expression-and-declaration)
+(define-key js3-mode-map (kbd "C-c RET tf") 'js2r-toggle-function-expression-and-declaration)
 
 
 
@@ -115,8 +115,8 @@
 (require 'js2r-conveniences)
 
 ;; Make sure commas are placed correctly when moving a line in a literal
-(define-key js2-mode-map (kbd "<C-S-down>") 'js-move-line-down)
-(define-key js2-mode-map (kbd "<C-S-up>") 'js-move-line-up)
+(define-key js3-mode-map (kbd "<C-S-down>") 'js-move-line-down)
+(define-key js3-mode-map (kbd "<C-S-up>") 'js-move-line-up)
 
 
 

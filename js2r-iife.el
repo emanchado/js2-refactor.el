@@ -18,24 +18,24 @@
 
 (defun js2r--selected-name-positions ()
   "Returns the (beginning . end) of the name at cursor, or active region."
-  (let ((current-node (js2-node-at-point))
+  (let ((current-node (js3-node-at-point))
         beg end)
-    (unless (js2-name-node-p current-node)
-      (setq current-node (js2-node-at-point (- (point) 1))))
-    (if (not (and current-node (js2-name-node-p current-node)))
+    (unless (js3-name-node-p current-node)
+      (setq current-node (js3-node-at-point (- (point) 1))))
+    (if (not (and current-node (js3-name-node-p current-node)))
         (error "Point is not on an identifier."))
     (if (use-region-p)
         (cons (region-beginning) (region-end))
       (progn
-        (setq end (+ (js2-node-abs-pos current-node)
-                     (js2-node-len current-node)))
+        (setq end (+ (js3-node-abs-pos current-node)
+                     (js3-node-len current-node)))
         (skip-syntax-backward ".w_")
         (cons (point) end)))))
 
 (defun js-inject-global-in-iife ()
   "Create shortcut for marked global by injecting it in the wrapping IIFE"
   (interactive)
-  (when js2-parsed-errors
+  (when js3-parsed-errors
     (error "Can't refactor while buffer has parse errors."))
   (save-excursion
     (let* ((name-pos (js2r--selected-name-positions))
