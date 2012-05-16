@@ -28,6 +28,7 @@ All refactorings start with `C-c C-m` and then a two-letter mnemonic shortcut.
  * `co` is `contract-object`: Converts a multiline object literal to one line.
  * `wi` is `wrap-buffer-in-iife`: Wraps the entire buffer in an immediately invoked function expression
  * `ig` is `inject-global-in-iife`: Creates a shortcut for a marked global by injecting it in the wrapping immediately invoked function expression
+ * `ag` is `add-to-globals-annotation`: Adds the var at point it to the lint /\*globals\*/ annotation.
  * `ev` is `extract-variable`: Takes a marked expression and replaces it with a var.
  * `rv` is `rename-var`: Renames the variable on point and all occurrences in its lexical scope.
 
@@ -53,7 +54,12 @@ A list of some wanted improvements for the current refactorings.
  * expand- and contract-object: should work for simple functions.
  * wrap-buffer-in-iife: should skip comments and namespace initializations at buffer start.
  * extract-variable: could end with a query-replace of the expression in its scope.
- * rename-var: should skip keys in object literals
+
+## Contributions
+
+* [Matt Briggs](https://github.com/mbriggs) contributed `js2r-add-to-globals-annotation`
+
+Thanks!
 
 ## Contribute
 
